@@ -27,19 +27,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //diagrammOeffnen();
-
                 berechne();
-
-
             }
         });
     }
 
     public void berechne(){
-        RadioButton m = (RadioButton) findViewById(R.id.radioButton2);
-        RadioButton w = (RadioButton) findViewById(R.id.radioButton3);
         EditText bauchTEXT = (EditText) findViewById(R.id.editText2);
         EditText halsTEXT = (EditText) findViewById(R.id.editText3);
         EditText groeßeTEXT = (EditText) findViewById(R.id.editText4);
@@ -51,16 +45,16 @@ public class MainActivity extends AppCompatActivity {
         double groeße = Double.parseDouble(groeßeTEXT.getText().toString());
 
 
-                double kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
-                ergebnis.setText("KFA: " + kfa);
-                if(kfa > 30) {
-                    bild.setImageResource(R.drawable.ic_launcher_background);
-                }else {
-                    bild.setImageResource(R.drawable.abc);
-                }
+        double kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
+        ergebnis.setText("KFA: " + kfa);
+        if(kfa > 30) {
+            bild.setImageResource(R.drawable.ic_launcher_background);
+        }else {
+            bild.setImageResource(R.drawable.abc);
+        }
 
 
-           }
+    }
 
     public void diagrammOeffnen(){
         Intent inte = new Intent(this, Liniendiagramm.class);
