@@ -34,12 +34,8 @@ class FrauActivity extends AppCompatActivity {
 
 
                 double kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
-                ergebnis.setText("KFA (MANN): " + kfa);
-                if (kfa > 30) {
-                    bild.setImageResource(R.drawable.ic_launcher_background);
-                } else {
-                    bild.setImageResource(R.drawable.abc);
-                }
+                ergebnis.setText("KFA (Frau): " + kfa);
+
             }
         });
     }

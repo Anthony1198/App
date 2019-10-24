@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="312dp"
         android:ems="10"
-        android:hint="Größe1234"
+        android:hint="Größe"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.535"

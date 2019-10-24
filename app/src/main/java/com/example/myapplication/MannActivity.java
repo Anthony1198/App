@@ -45,10 +45,6 @@ public class MannActivity extends AppCompatActivity {
         });
     }
 
-
-
-
-
     public void diagrammOeffnen(){
         Intent inte = new Intent(this, Liniendiagramm.class);
         startActivity(inte);

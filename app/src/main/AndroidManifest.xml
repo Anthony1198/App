@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MannActivity"/>
         <activity android:name=".FrauActivity"/>
-        <activity android:name=".Liniendiagramm" />
+        <activity android:name=".Liniendiagramm"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

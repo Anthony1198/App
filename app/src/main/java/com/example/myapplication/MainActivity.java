@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ImageButton bFrau = (ImageButton) findViewById(R.id.imageButton2);
-        bMann.setOnClickListener(new View.OnClickListener() {
+        bFrau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 oeffneFrau();
