@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MannActivity"/>
-        <activity android:name=".FrauActivity"/>
-        <activity android:name=".Liniendiagramm"/>
+        <activity android:name=".Frau"></activity>
+        <activity android:name=".MannActivity" />
+        <activity android:name=".Liniendiagramm" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

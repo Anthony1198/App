@@ -2,6 +2,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        ImageButton bMann = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton bMann = (ImageButton) findViewById(R.id.imageButtonMANN);
         bMann.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton bFrau = (ImageButton) findViewById(R.id.imageButton2);
+        ImageButton bFrau = (ImageButton) findViewById(R.id.imageButtonFRAU);
         bFrau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,12 +33,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void oeffneMann(){
         Intent iMann = new Intent(this, MannActivity.class);
         startActivity(iMann);
     }
     public void oeffneFrau(){
-        Intent iFrau = new Intent(this, FrauActivity.class);
+        Intent iFrau = new Intent(this, Frau.class);
         startActivity(iFrau);
     }
 
