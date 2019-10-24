@@ -1,15 +1,13 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    final String databaseWert = "databaseData.db";
-    boolean mann;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +15,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        ImageButton bMann = (ImageButton) findViewById(R.id.imageButton);
+        bMann.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                oeffneMann();
             }
         });
 
+        ImageButton bFrau = (ImageButton) findViewById(R.id.imageButton2);
+        bMann.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oeffneFrau();
+            }
+        });
 
     }
-
+    public void oeffneMann(){
+        Intent iMann = new Intent(this, MannActivity.class);
+        startActivity(iMann);
+    }
+    public void oeffneFrau(){
+        Intent iFrau = new Intent(this, FrauActivity.class);
+        startActivity(iFrau);
+    }
 
 
 }

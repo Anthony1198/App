@@ -7,5 +7,55 @@
     tools:context=".MainActivity">
 
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="284dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@+id/imageViewMann" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="284dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@+id/imageViewFrau" />
+
+    <ImageView
+        android:id="@+id/imageViewMann"
+        android:layout_width="284dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@drawable/bild_mann" />
+
+    <ImageView
+        android:id="@+id/imageViewFrau"
+        android:layout_width="284dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/bild_frau" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:text="Geschlecht"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
