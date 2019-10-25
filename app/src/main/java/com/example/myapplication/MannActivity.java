@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MannActivity extends AppCompatActivity {
 
 
+    double kfa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,19 +36,22 @@ public class MannActivity extends AppCompatActivity {
                 double groeße = Double.parseDouble(groeßeTEXT.getText().toString());
 
 
-                double kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
+                kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
                 ergebnis.setText("KFA (MANN): " + kfa);
+
                 if(kfa > 30) {
                     bild.setImageResource(R.drawable.ic_launcher_background);
                 }else {
                     bild.setImageResource(R.drawable.abc);
                 }
+                diagrammOeffnen();
             }
         });
     }
 
     public void diagrammOeffnen(){
         Intent inte = new Intent(this, Liniendiagramm.class);
+        inte.putExtra("KFA", (int)kfa);
         startActivity(inte);
     }
 

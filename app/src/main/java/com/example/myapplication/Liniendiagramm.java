@@ -17,19 +17,20 @@ import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.view.LineChartView;
 
 public class Liniendiagramm extends AppCompatActivity {
-    int janZ = 90;
-    int febZ = 40;
-    int merZ = 70;
+
 
     LineChartView lineChartView;
 
-    String[] axisData = {"Jan", "Feb", "Märr"};
-    int[] yAxisData = {janZ,febZ,merZ};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liniendiagramm);
+
+        int wert1 = getIntent().getExtras().getInt("KFA");
+
+        String[] axisData = {"Wert1", "Wert2", "Wert3"};
+        int[] yAxisData = {wert1, 22, 42};
 
         lineChartView = findViewById(R.id.chart);
 
@@ -55,19 +56,20 @@ public class Liniendiagramm extends AppCompatActivity {
 
         Axis axis = new Axis();
         axis.setValues(axisValues);
-        axis.setTextSize(16);
+        axis.setTextSize(22);
         axis.setTextColor(Color.parseColor("#03A9F4"));
         data.setAxisXBottom(axis);
 
         Axis yAxis = new Axis();
-        yAxis.setName("Sales in millions");
+        yAxis.setName("Kröperfettanteil in %");
         yAxis.setTextColor(Color.parseColor("#03A9F4"));
-        yAxis.setTextSize(16);
+        yAxis.setTextSize(22);
         data.setAxisYLeft(yAxis);
 
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        viewport.top = 110;
+        viewport.top = 50;
+        viewport.bottom = 0;
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
     }

@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Frau extends AppCompatActivity {
+
+    double kfa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,17 @@ public class Frau extends AppCompatActivity {
                 double groeße = Double.parseDouble(groeßeTEXT.getText().toString());
 
 
-                double kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
+                kfa = (86.010 * Math.log(bauch - hals)) - (70.041 * Math.log(groeße)) + 30.30;
                 ergebnis.setText("KFA (Frau): " + kfa);
+                diagrammOeffnen();
 
             }
         });
+    }
+    public void diagrammOeffnen(){
+        Intent inte = new Intent(this, Liniendiagramm.class);
+        inte.putExtra("KFA", (int)kfa);
+        startActivity(inte);
     }
     }
 
