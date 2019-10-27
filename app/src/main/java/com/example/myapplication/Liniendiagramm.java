@@ -1,7 +1,11 @@
 package com.example.myapplication;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,17 +24,21 @@ public class Liniendiagramm extends AppCompatActivity {
 
 
     LineChartView lineChartView;
-
+    DatabaseHelper mDatabaseHelper;
+    ArrayList<Integer> listData;
+    int wert1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liniendiagramm);
 
-        int wert1 = getIntent().getExtras().getInt("KFA");
+
+        mDatabaseHelper = new DatabaseHelper(this);
+        kfaInGraph();
 
         String[] axisData = {"Wert1", "Wert2", "Wert3"};
-        int[] yAxisData = {wert1, 22, 42};
+        int[] yAxisData = {wert1, 22, 33};
 
         lineChartView = findViewById(R.id.chart);
 
@@ -73,5 +81,18 @@ public class Liniendiagramm extends AppCompatActivity {
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
     }
+
+    private void kfaInGraph() {
+        //get the data and append to a list
+        Cursor data = mDatabaseHelper.getKFA();
+       // listData = new ArrayList<>();
+        while(data.moveToNext()){
+            //get the value from the database in column 1
+            //then add it to the ArrayList
+           // listData.add(data.getInt(1));'
+            wert1 = data.getInt(1);
+        }
+    }
+
 
 }
