@@ -37,7 +37,7 @@ public class Liniendiagramm extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
         kfaInGraph();
 
-        String[] axisData = {"Wert1", "Wert2", "Wert3"};
+        String[] axisData = {"1. Messung", "2. Messung", "3. Messung"};
         int[] yAxisData = {wert1, 22, 33};
 
         lineChartView = findViewById(R.id.chart);
@@ -64,7 +64,7 @@ public class Liniendiagramm extends AppCompatActivity {
 
         Axis axis = new Axis();
         axis.setValues(axisValues);
-        axis.setTextSize(22);
+        axis.setTextSize(16);
         axis.setTextColor(Color.parseColor("#03A9F4"));
         data.setAxisXBottom(axis);
 
@@ -90,7 +90,8 @@ public class Liniendiagramm extends AppCompatActivity {
             //get the value from the database in column 1
             //then add it to the ArrayList
            // listData.add(data.getInt(1));'
-            wert1 = data.getInt(1);
+            wert1 = data.getInt(4);
+
         }
     }
 

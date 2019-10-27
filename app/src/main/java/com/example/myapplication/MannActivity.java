@@ -14,8 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MannActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
-
     DatabaseHelper mDatabaseHelper;
     private Button btnAdd, liste, graph;
     private EditText bauchT, halsT, größeT;
@@ -91,7 +89,7 @@ public class MannActivity extends AppCompatActivity {
     }
 
     /**
-     * customizable toast
+     * Nachrichten-Ausgabe
      * @param message
      */
     private void toastMessage(String message){

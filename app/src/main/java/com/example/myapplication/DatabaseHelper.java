@@ -13,8 +13,6 @@ import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "DatabaseHelper";
-
     private static final String TABLE_NAME = "people_table";
     private static final String COL1 = "ID";
     private static final String COL2 = "bauch";
@@ -46,8 +44,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL4, item3);
         contentValues.put(COL5, item4);
 
-        Log.d(TAG, "addData: Adding " + item + item2 + item3 + " to " + TABLE_NAME);
-
         long result = db.insert(TABLE_NAME, null, contentValues);
 
         //if date as inserted incorrectly it will return -1
@@ -69,10 +65,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    /**
+     * Gibt nur den KFA-WERT zurück von der Datenbank (für den Graph)
+     * @return
+     */
+
     public Cursor getKFA(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-        return res;
+        String query = "SELECT * FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        return data;
     }
 
 }
