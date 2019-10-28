@@ -45,7 +45,7 @@ public class ListDataActivity extends AppCompatActivity {
             listData.add("Bauch: " + data.getString(1) + "\n" +
                         "Hals: " + data.getString(2) + "\n" +
                         "Größe: " + data.getString(3) + "\n" +
-                    "Kfa: " + data.getString(4));
+                    "Kfa: " + data.getString(4) + "%");
         }
         //create the list adapter and set the adapter
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);

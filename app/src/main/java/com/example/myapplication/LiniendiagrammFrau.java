@@ -1,13 +1,10 @@
 package com.example.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListAdapter;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,24 +17,22 @@ import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.view.LineChartView;
 
-public class Liniendiagramm extends AppCompatActivity {
-
+public class LiniendiagrammFrau extends AppCompatActivity {
 
     LineChartView lineChartView;
-    DatabaseHelper mDatabaseHelper;
+    DatabaseHelperFrau mDatabaseHelperFrau;
     ArrayList<Integer> listData;
     int[] yAxisData;
     String[] xAxisData;
-    int wert1;
     int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_liniendiagramm);
+        setContentView(R.layout.activity_liniendiagramm_frau);
 
 
-        mDatabaseHelper = new DatabaseHelper(this);
+        mDatabaseHelperFrau = new DatabaseHelperFrau(this);
         kfaInGraph();
 
 
@@ -84,13 +79,13 @@ public class Liniendiagramm extends AppCompatActivity {
     }
 
     private void kfaInGraph() {
-        Cursor data = mDatabaseHelper.getData();
-        int rows = mDatabaseHelper.getRowsCount();
+        Cursor data = mDatabaseHelperFrau.getData();
+        int rows = mDatabaseHelperFrau.getRowsCount();
         yAxisData = new int[rows];
         xAxisData = new String[rows];
 
         while (data.moveToNext()){
-            yAxisData[i] = data.getInt(4);
+            yAxisData[i] = data.getInt(5);
             xAxisData[i] = (""+(i+1));
             i++;
         }

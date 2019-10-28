@@ -45,7 +45,7 @@ public class MannActivity extends AppCompatActivity {
                     int newEntry2 = Integer.parseInt(halsT.getText().toString());
                     int newEntry3 = Integer.parseInt(größeT.getText().toString());
 
-                    kfa = (86.010 * Math.log(newEntry - newEntry2)) - (70.041 * Math.log(newEntry3)) + 30.30;
+                    kfa = (86.010 * Math.log10(newEntry - newEntry2)) - (70.041 * Math.log10(newEntry3)) + 30.30;
                     AddData(newEntry, newEntry2, newEntry3, (int)kfa);
                     bauchT.setText("");
                     halsT.setText("");
@@ -82,12 +82,13 @@ public class MannActivity extends AppCompatActivity {
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if(){
+                int rows = mDatabaseHelper.getRowsCount();
+                if(rows >1){
                 Intent intent = new Intent(MannActivity.this, Liniendiagramm.class);
                 startActivity(intent);
-                //}else{
-                  //  toastMessage("Graph erst ab zwei Datnsätzen nutzbar!");
-           // }
+                }else{
+                   toastMessage("Graph erst ab zwei Datnsätzen nutzbar!");
+            }
         }
     });
     }
