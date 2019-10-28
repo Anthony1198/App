@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL3 = "hals";
     private static final String COL4 = "größe";
     private static final String COL5 = "kfa";
+    public static int z = 0;
 
 
     public DatabaseHelper(Context context) {
@@ -43,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL3, item2);
         contentValues.put(COL4, item3);
         contentValues.put(COL5, item4);
-
+        z++;
         long result = db.insert(TABLE_NAME, null, contentValues);
 
         //if date as inserted incorrectly it will return -1
@@ -64,19 +65,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-
-    /**
-     * Gibt nur den KFA-WERT zurück von der Datenbank (für den Graph)
-     * @return
-     */
-
-    public Cursor getKFA(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
-        Cursor data = db.rawQuery(query, null);
-        return data;
-    }
-
 }
 
 

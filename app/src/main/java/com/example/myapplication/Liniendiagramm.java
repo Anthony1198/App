@@ -26,7 +26,10 @@ public class Liniendiagramm extends AppCompatActivity {
     LineChartView lineChartView;
     DatabaseHelper mDatabaseHelper;
     ArrayList<Integer> listData;
+    int[] yAxisData;
+    String[] xAxisData;
     int wert1;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +40,6 @@ public class Liniendiagramm extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
         kfaInGraph();
 
-        String[] axisData = {"1. Messung", "2. Messung", "3. Messung"};
-        int[] yAxisData = {wert1, 22, 33};
 
         lineChartView = findViewById(R.id.chart);
 
@@ -48,8 +49,8 @@ public class Liniendiagramm extends AppCompatActivity {
 
         Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));
 
-        for (int i = 0; i < axisData.length; i++) {
-            axisValues.add(i, new AxisValue(i).setLabel(axisData[i]));
+        for (int i = 0; i < xAxisData.length; i++) {
+            axisValues.add(i, new AxisValue(i).setLabel(xAxisData[i]));
         }
 
         for (int i = 0; i < yAxisData.length; i++) {
@@ -83,17 +84,14 @@ public class Liniendiagramm extends AppCompatActivity {
     }
 
     private void kfaInGraph() {
-        //get the data and append to a list
-        Cursor data = mDatabaseHelper.getKFA();
-       // listData = new ArrayList<>();
-        while(data.moveToNext()){
-            //get the value from the database in column 1
-            //then add it to the ArrayList
-           // listData.add(data.getInt(1));'
-            wert1 = data.getInt(4);
+        Cursor data = mDatabaseHelper.getData();
+        yAxisData = new int[DatabaseHelper.z];
+        xAxisData = new String[DatabaseHelper.z];
 
+        while (data.moveToNext()){
+            yAxisData[i] = data.getInt(4);
+            xAxisData[i] = (""+(i+1));
+            i++;
         }
     }
-
-
 }

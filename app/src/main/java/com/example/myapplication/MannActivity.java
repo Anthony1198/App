@@ -39,23 +39,34 @@ public class MannActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int newEntry = Integer.parseInt(bauchT.getText().toString());
-                int newEntry2 = Integer.parseInt(halsT.getText().toString());
-                int newEntry3 = Integer.parseInt(größeT.getText().toString());
-                if (bauchT.length() != 0 && halsT.length() != 0 &&  größeT.length() != 0)  {
+
+                if (bauchT.getText().length() != 0 && halsT.getText().length() != 0 &&  größeT.getText().length() != 0)  {
+                    int newEntry = Integer.parseInt(bauchT.getText().toString());
+                    int newEntry2 = Integer.parseInt(halsT.getText().toString());
+                    int newEntry3 = Integer.parseInt(größeT.getText().toString());
+
                     kfa = (86.010 * Math.log(newEntry - newEntry2)) - (70.041 * Math.log(newEntry3)) + 30.30;
                     AddData(newEntry, newEntry2, newEntry3, (int)kfa);
                     bauchT.setText("");
                     halsT.setText("");
                     größeT.setText("");
                     ergebnis.setText("Kfa: " + (int)kfa);
+
+                    if(kfa < 13) {
+                        bild.setImageResource(R.drawable.bild_zwoelf);
+                    }if(kfa > 11 && kfa < 16) {
+                        bild.setImageResource(R.drawable.bild_fzehn);
+                    }if(kfa > 14 && kfa < 21) {
+                        bild.setImageResource(R.drawable.bild_zwanzig);
+                    }if(kfa > 19 && kfa < 26) {
+                        bild.setImageResource(R.drawable.bild_fzwanzig);
+                    }if(kfa > 24 && kfa < 31) {
+                        bild.setImageResource(R.drawable.bild_dreissig);
+                    }if(kfa > 29 && kfa < 36) {
+                        bild.setImageResource(R.drawable.bild_fdreissig);
+                    }
                 } else {
                     toastMessage("Felder dürfen nicht leer sein!");
-                }
-                if(kfa > 30) {
-                    bild.setImageResource(R.drawable.ic_launcher_background);
-                }else {
-                    bild.setImageResource(R.drawable.abc);
                 }
             }
         });
@@ -71,11 +82,14 @@ public class MannActivity extends AppCompatActivity {
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //if(){
                 Intent intent = new Intent(MannActivity.this, Liniendiagramm.class);
                 startActivity(intent);
-            }
-        });
-
+                //}else{
+                  //  toastMessage("Graph erst ab zwei Datnsätzen nutzbar!");
+           // }
+        }
+    });
     }
 
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4) {
