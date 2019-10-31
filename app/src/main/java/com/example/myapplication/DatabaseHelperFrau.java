@@ -72,10 +72,10 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
     }
 
     public int getMAXkfa() {
-        String maxQuery = "SELECT  MAX(kfa) FROM " + TABLE_NAME;
+        String countQuery = "SELECT  * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(maxQuery, null);
-        int count = cursor.getInt(cursor.getColumnIndex("kfa"));
+        Cursor cursor = db.query(TABLE_NAME, null, "kfa=(SELECT MAX(kfa))", null, null, null, null);
+        int count = cursor.getCount();
         cursor.close();
         return count;
     }
