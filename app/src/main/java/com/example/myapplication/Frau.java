@@ -53,18 +53,18 @@ public class Frau extends AppCompatActivity {
                     hüfteT.setText("");
                     ergebnis.setText("Kfa: " + (int)kfa);
 
-                    if(kfa < 13) {
-                        bild.setImageResource(R.drawable.bild_zwoelf);
-                    }if(kfa > 11 && kfa < 16) {
-                        bild.setImageResource(R.drawable.bild_fzehn);
-                    }if(kfa > 14 && kfa < 21) {
-                        bild.setImageResource(R.drawable.bild_zwanzig);
-                    }if(kfa > 19 && kfa < 26) {
-                        bild.setImageResource(R.drawable.bild_fzwanzig);
-                    }if(kfa > 24 && kfa < 31) {
-                        bild.setImageResource(R.drawable.bild_dreissig);
-                    }if(kfa > 29 && kfa < 36) {
-                        bild.setImageResource(R.drawable.bild_fdreissig);
+                    if(kfa < 21) {
+                        bild.setImageResource(R.drawable.bild_zwanzigf);
+                    }if(kfa > 20 && kfa < 26) {
+                        bild.setImageResource(R.drawable.bild_fzwanzigf);
+                    }if(kfa > 25 && kfa < 31) {
+                        bild.setImageResource(R.drawable.bild_dreissigf);
+                    }if(kfa > 30 && kfa < 36) {
+                        bild.setImageResource(R.drawable.bild_fdreissigf);
+                    }if(kfa > 35 && kfa < 41) {
+                        bild.setImageResource(R.drawable.bild_vierzigf);
+                    }if(kfa > 40 && kfa < 46) {
+                        bild.setImageResource(R.drawable.bild_fvierzigf);
                     }
                 } else {
                     toastMessage("Felder dürfen nicht leer sein!");
