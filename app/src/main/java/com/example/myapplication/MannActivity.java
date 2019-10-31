@@ -47,7 +47,7 @@ public class MannActivity extends AppCompatActivity {
 
                     kfa = (86.010 * Math.log10(newEntry - newEntry2)) - (70.041 * Math.log10(newEntry3)) + 30.30;
 
-                    if(kfa > 0) {
+                    if(kfa > 0 && kfa < 36) {
                         AddData(newEntry, newEntry2, newEntry3, (int) kfa);
                         bauchT.setText("");
                         halsT.setText("");
@@ -73,11 +73,20 @@ public class MannActivity extends AppCompatActivity {
                             bild.setImageResource(R.drawable.bild_fdreissigm);
                         }
                     }
-                    else{
+                    if(kfa < 0){
                         toastMessage("Der Körperfettanteil kann nicht unter 0% liegen!");
                         bauchT.setText("");
                         halsT.setText("");
                         größeT.setText("");
+                    }
+                    if(kfa > 35){
+                        toastMessage("Ihr Köperfettanteil ist über 35%. Bitte suchen Sie einen Arzt auf!");
+                        AddData(newEntry, newEntry2, newEntry3, (int) kfa);
+                        bauchT.setText("");
+                        halsT.setText("");
+                        größeT.setText("");
+                        ergebnis.setText("        KFA: " + (int) kfa + "%");
+                        bild.setImageResource(R.drawable.bild_arzt);
                     }
                 } else {
                     toastMessage("Felder dürfen nicht leer sein!");
