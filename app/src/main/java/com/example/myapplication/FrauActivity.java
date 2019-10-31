@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class FrauActivity extends AppCompatActivity {
 
     DatabaseHelperFrau mDatabaseHelperFrau;
-    private Button btnAdd, liste, graph;
+    private Button btnAdd, liste, graph, hilfe;
     private EditText bauchT, halsT, größeT, hüfteT;
     private ImageView bild;
     private TextView ergebnis;
@@ -33,6 +33,7 @@ public class FrauActivity extends AppCompatActivity {
         btnAdd = (Button) findViewById(R.id.button);
         liste = (Button) findViewById(R.id.button2);
         graph = (Button) findViewById(R.id.button3);
+        hilfe = (Button) findViewById(R.id.helpButton);
 
         mDatabaseHelperFrau = new DatabaseHelperFrau(this);
 
@@ -116,6 +117,13 @@ public class FrauActivity extends AppCompatActivity {
                 }
             }
         });
+
+        hilfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oeffneHilfe();
+            }
+        });
     }
 
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4, int newEntry5) {
@@ -126,6 +134,11 @@ public class FrauActivity extends AppCompatActivity {
         } else {
             toastMessage("Etwas ist schief gelaufen :(");
         }
+    }
+
+    public void oeffneHilfe(){
+        Intent iHilfe = new Intent(this, HilfeActivity.class);
+        startActivity(iHilfe);
     }
 
     /**

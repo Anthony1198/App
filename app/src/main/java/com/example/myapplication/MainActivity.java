@@ -2,6 +2,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -31,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button bHilfe = (Button) findViewById(R.id.helpButton);
+        bHilfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oeffneHilfe();
+            }
+        });
+
     }
 
     public void oeffneMann(){
@@ -40,5 +49,9 @@ public class MainActivity extends AppCompatActivity {
     public void oeffneFrau(){
         Intent iFrau = new Intent(this, FrauActivity.class);
         startActivity(iFrau);
+    }
+    public void oeffneHilfe(){
+        Intent iHilfe = new Intent(this, HilfeActivity.class);
+        startActivity(iHilfe);
     }
 }

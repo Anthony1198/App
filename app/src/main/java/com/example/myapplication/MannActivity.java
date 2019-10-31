@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MannActivity extends AppCompatActivity {
 
     DatabaseHelperMann mDatabaseHelperMann;
-    private Button btnAdd, liste, graph;
+    private Button btnAdd, liste, graph, hilfe;
     private EditText bauchT, halsT, größeT;
     private ImageView bild;
     private TextView ergebnis;
@@ -33,6 +33,7 @@ public class MannActivity extends AppCompatActivity {
         btnAdd = (Button) findViewById(R.id.button);
         liste = (Button) findViewById(R.id.button2);
         graph = (Button) findViewById(R.id.button3);
+        hilfe = (Button) findViewById(R.id.helpButton);
 
         mDatabaseHelperMann = new DatabaseHelperMann(this);
 
@@ -114,6 +115,13 @@ public class MannActivity extends AppCompatActivity {
             }
         }
     });
+
+        hilfe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                oeffneHilfe();
+            }
+        });
     }
 
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4) {
@@ -124,6 +132,11 @@ public class MannActivity extends AppCompatActivity {
         } else {
             toastMessage("Etwas ist schief gelaufen :(");
         }
+    }
+
+    public void oeffneHilfe(){
+        Intent iHilfe = new Intent(this, HilfeActivity.class);
+        startActivity(iHilfe);
     }
 
     /**
