@@ -24,7 +24,7 @@ public class ListDataActivityFrau extends AppCompatActivity {
         @Override
         protected void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.list_layout);
+            setContentView(R.layout.activity_list_data_mann);
             mListView = (ListView) findViewById(R.id.listView);
             mDatabaseHelperFrau = new DatabaseHelperFrau(this);
 

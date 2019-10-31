@@ -11,10 +11,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ListDataActivityFrau"></activity>
         <activity android:name=".LiniendiagrammFrau" />
-        <activity android:name=".ListDataActivity" />
-        <activity android:name=".Frau" />
+        <activity android:name=".ListDataActivityMann" />
+        <activity android:name=".FrauActivity" />
         <activity android:name=".MannActivity" />
-        <activity android:name=".Liniendiagramm" />
+        <activity android:name=".LiniendiagrammMann" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

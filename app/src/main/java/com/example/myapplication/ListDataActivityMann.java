@@ -15,20 +15,20 @@ import java.util.ArrayList;
 
 
 
-public class ListDataActivity extends AppCompatActivity {
+public class ListDataActivityMann extends AppCompatActivity {
 
     private static final String TAG = "ListDataActivity";
 
-    DatabaseHelper mDatabaseHelper;
+    DatabaseHelperMann mDatabaseHelperMann;
 
     private ListView mListView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_layout);
+        setContentView(R.layout.activity_list_data_mann);
         mListView = (ListView) findViewById(R.id.listView);
-        mDatabaseHelper = new DatabaseHelper(this);
+        mDatabaseHelperMann = new DatabaseHelperMann(this);
 
         populateListView();
     }
@@ -37,7 +37,7 @@ public class ListDataActivity extends AppCompatActivity {
         Log.d(TAG, "populateListView: Displaying data in the ListView.");
 
         //get the data and append to a list
-        Cursor data = mDatabaseHelper.getData();
+        Cursor data = mDatabaseHelperMann.getData();
         ArrayList<String> listData = new ArrayList<>();
         while(data.moveToNext()){
             //get the value from the database in column 1

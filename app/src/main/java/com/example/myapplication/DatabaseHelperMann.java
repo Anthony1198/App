@@ -12,7 +12,7 @@ import android.util.Log;
  * Created by Anthony at 27.10.2019
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelperMann extends SQLiteOpenHelper {
 
     private static final String TABLE_NAME = "WerteMann";
     private static final String COL1 = "ID";
@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL5 = "kfa";
 
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelperMann(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
 

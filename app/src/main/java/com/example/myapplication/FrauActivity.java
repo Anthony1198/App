@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Frau extends AppCompatActivity {
+public class FrauActivity extends AppCompatActivity {
 
     DatabaseHelperFrau mDatabaseHelperFrau;
     private Button btnAdd, liste, graph;
@@ -23,7 +23,7 @@ public class Frau extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_frau2);
+        setContentView(R.layout.activity_frau);
         bauchT = (EditText) findViewById(R.id.editText2);
         halsT = (EditText) findViewById(R.id.editText3);
         größeT = (EditText) findViewById(R.id.editText4);
@@ -90,7 +90,7 @@ public class Frau extends AppCompatActivity {
         liste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Frau.this, ListDataActivityFrau.class);
+                Intent intent = new Intent(FrauActivity.this, ListDataActivityFrau.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +100,7 @@ public class Frau extends AppCompatActivity {
             public void onClick(View v) {
                 int rows = mDatabaseHelperFrau.getRowsCount();
                 if(rows >1){
-                    Intent intent = new Intent(Frau.this, LiniendiagrammFrau.class);
+                    Intent intent = new Intent(FrauActivity.this, LiniendiagrammFrau.class);
                     startActivity(intent);
                 }else{
                     toastMessage("Graph erst ab zwei Datensätzen nutzbar!");

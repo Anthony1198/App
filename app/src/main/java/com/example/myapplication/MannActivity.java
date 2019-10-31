@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MannActivity extends AppCompatActivity {
 
-    DatabaseHelper mDatabaseHelper;
+    DatabaseHelperMann mDatabaseHelperMann;
     private Button btnAdd, liste, graph;
     private EditText bauchT, halsT, größeT;
     private ImageView bild;
@@ -34,7 +34,7 @@ public class MannActivity extends AppCompatActivity {
         liste = (Button) findViewById(R.id.button2);
         graph = (Button) findViewById(R.id.button3);
 
-        mDatabaseHelper = new DatabaseHelper(this);
+        mDatabaseHelperMann = new DatabaseHelperMann(this);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class MannActivity extends AppCompatActivity {
         liste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MannActivity.this, ListDataActivity.class);
+                Intent intent = new Intent(MannActivity.this, ListDataActivityMann.class);
                 startActivity(intent);
             }
         });
@@ -96,9 +96,9 @@ public class MannActivity extends AppCompatActivity {
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int rows = mDatabaseHelper.getRowsCount();
+                int rows = mDatabaseHelperMann.getRowsCount();
                 if(rows >1){
-                Intent intent = new Intent(MannActivity.this, Liniendiagramm.class);
+                Intent intent = new Intent(MannActivity.this, LiniendiagrammMann.class);
                 startActivity(intent);
                 }else{
                    toastMessage("Graph erst ab zwei Datensätzen nutzbar!");
@@ -108,7 +108,7 @@ public class MannActivity extends AppCompatActivity {
     }
 
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4) {
-        boolean insertData = mDatabaseHelper.addData(newEntry, newEntry2, newEntry3, newEntry4);
+        boolean insertData = mDatabaseHelperMann.addData(newEntry, newEntry2, newEntry3, newEntry4);
 
         if (insertData) {
             toastMessage("Daten wurden erfolgreich gespeichert!");
