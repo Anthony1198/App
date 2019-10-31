@@ -14,6 +14,9 @@
 
         android:layout_marginTop="16dp"
         android:background="@drawable/image_round"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -29,6 +32,9 @@
         android:layout_marginTop="20dp"
 
         android:background="@drawable/image_round"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
