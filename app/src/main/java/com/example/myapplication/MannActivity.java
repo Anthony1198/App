@@ -50,7 +50,7 @@ public class MannActivity extends AppCompatActivity {
                     bauchT.setText("");
                     halsT.setText("");
                     größeT.setText("");
-                    ergebnis.setText("Kfa: " + (int)kfa);
+                    ergebnis.setText("        KFA: " + (int)kfa + "%");
 
                     if(kfa < 13) {
                         bild.setImageResource(R.drawable.bild_zwoelf);
@@ -87,7 +87,7 @@ public class MannActivity extends AppCompatActivity {
                 Intent intent = new Intent(MannActivity.this, Liniendiagramm.class);
                 startActivity(intent);
                 }else{
-                   toastMessage("Graph erst ab zwei Datnsätzen nutzbar!");
+                   toastMessage("Graph erst ab zwei Datensätzen nutzbar!");
             }
         }
     });

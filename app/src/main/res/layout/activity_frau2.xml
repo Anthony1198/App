@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Frau">
+    tools:context=".Frau"
+    android:background="@drawable/gradient_background">
 
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:text="Graph anzeigen"
+        android:layout_marginTop="332dp"
+        android:background="@drawable/button_round"
+        android:padding="10dp"
+        android:text="Graph"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,10 +25,12 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:text="Liste anzeigen"
+        android:layout_marginTop="332dp"
+        android:background="@drawable/button_round"
+        android:padding="10dp"
+        android:text="Liste"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +38,7 @@
         android:id="@+id/editText4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="160dp"
         android:ems="10"
         android:hint="Größe"
         android:inputType="numberDecimal"
@@ -79,21 +84,24 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="138dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="340dp"
-        android:text="ERGEBNIS"
+        android:layout_width="193dp"
+        android:layout_height="193dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="380dp"
+        android:background="@drawable/button_round"
+        android:padding="10dp"
+        android:text="Körperfett-Anteil"
+        android:textColor="#000"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="388dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="149dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="128dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[0]" />
@@ -102,10 +110,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="296dp"
+        android:background="@drawable/button_round"
+        android:padding="10dp"
         android:text="Berechnen"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.284"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

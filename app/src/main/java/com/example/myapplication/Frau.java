@@ -88,7 +88,7 @@ public class Frau extends AppCompatActivity {
                     Intent intent = new Intent(Frau.this, LiniendiagrammFrau.class);
                     startActivity(intent);
                 }else{
-                    toastMessage("Graph erst ab zwei Datnsätzen nutzbar!");
+                    toastMessage("Graph erst ab zwei Datensätzen nutzbar!");
                 }
             }
         });

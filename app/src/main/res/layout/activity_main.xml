@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background">
 
     <ImageButton
         android:id="@+id/imageButtonMANN"
         android:layout_width="284dp"
         android:layout_height="177dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="132dp"
+        android:background="@drawable/image_round"
+
         app:layout_constraintBottom_toTopOf="@+id/imageButtonFRAU"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/bild_mann" />
 
@@ -22,9 +23,10 @@
         android:id="@+id/imageButtonFRAU"
         android:layout_width="284dp"
         android:layout_height="177dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="368dp"
+        android:background="@drawable/image_round"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bild_frau" />
@@ -33,10 +35,15 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:text="Geschlecht"
-        android:textSize="36sp"
+        android:layout_marginTop="280dp"
+        android:background="@drawable/text_round"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:text="Bitte Geschlecht auswählen"
+        android:textSize="20sp"
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
