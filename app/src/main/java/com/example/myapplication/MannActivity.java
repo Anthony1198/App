@@ -53,17 +53,17 @@ public class MannActivity extends AppCompatActivity {
                     ergebnis.setText("        KFA: " + (int)kfa + "%");
 
                     if(kfa < 13) {
-                        bild.setImageResource(R.drawable.bild_zwoelf);
+                        bild.setImageResource(R.drawable.bild_zwoelfm);
                     }if(kfa > 11 && kfa < 16) {
-                        bild.setImageResource(R.drawable.bild_fzehn);
+                        bild.setImageResource(R.drawable.bild_fzehnm);
                     }if(kfa > 14 && kfa < 21) {
-                        bild.setImageResource(R.drawable.bild_zwanzig);
+                        bild.setImageResource(R.drawable.bild_zwanzigm);
                     }if(kfa > 19 && kfa < 26) {
-                        bild.setImageResource(R.drawable.bild_fzwanzig);
+                        bild.setImageResource(R.drawable.bild_fzwanzigm);
                     }if(kfa > 24 && kfa < 31) {
-                        bild.setImageResource(R.drawable.bild_dreissig);
+                        bild.setImageResource(R.drawable.bild_dreissigm);
                     }if(kfa > 29 && kfa < 36) {
-                        bild.setImageResource(R.drawable.bild_fdreissig);
+                        bild.setImageResource(R.drawable.bild_fdreissigm);
                     }
                 } else {
                     toastMessage("Felder dürfen nicht leer sein!");

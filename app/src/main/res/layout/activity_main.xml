@@ -9,41 +9,50 @@
 
     <ImageButton
         android:id="@+id/imageButtonMANN"
-        android:layout_width="284dp"
-        android:layout_height="177dp"
-        android:layout_marginBottom="132dp"
-        android:background="@drawable/image_round"
+        android:layout_width="268dp"
+        android:layout_height="162dp"
 
-        app:layout_constraintBottom_toTopOf="@+id/imageButtonFRAU"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/image_round"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.728"
         app:srcCompat="@drawable/bild_mann" />
 
     <ImageButton
         android:id="@+id/imageButtonFRAU"
-        android:layout_width="284dp"
-        android:layout_height="177dp"
-        android:layout_marginTop="368dp"
-        android:background="@drawable/image_round"
+        android:layout_width="270dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="20dp"
 
+        android:background="@drawable/image_round"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/bild_frau" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="248dp"
         android:background="@drawable/text_round"
         android:elevation="10dp"
         android:padding="10dp"
         android:text="Bitte Geschlecht auswählen"
-        android:textSize="20sp"
 
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
