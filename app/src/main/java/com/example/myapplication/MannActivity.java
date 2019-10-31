@@ -75,6 +75,9 @@ public class MannActivity extends AppCompatActivity {
                     }
                     else{
                         toastMessage("Der Körperfettanteil kann nicht unter 0% liegen!");
+                        bauchT.setText("");
+                        halsT.setText("");
+                        größeT.setText("");
                     }
                 } else {
                     toastMessage("Felder dürfen nicht leer sein!");
