@@ -72,7 +72,7 @@ public class LiniendiagrammFrau extends AppCompatActivity {
 
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        viewport.top = 50;
+        viewport.top = mDatabaseHelperFrau.getMAXkfa();
         viewport.bottom = 0;
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
