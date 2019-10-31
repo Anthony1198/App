@@ -86,15 +86,15 @@
         android:id="@+id/textView2"
         android:layout_width="193dp"
         android:layout_height="193dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/button_round"
         android:padding="10dp"
         android:text="Körperfett-Anteil"
         android:textColor="#000"
         android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <ImageView
         android:id="@+id/imageView2"
