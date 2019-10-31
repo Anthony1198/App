@@ -46,25 +46,36 @@ public class Frau extends AppCompatActivity {
                     int newEntry4 = Integer.parseInt(hüfteT.getText().toString());
 
                     kfa = (163.205 * Math.log10(newEntry + newEntry4 - newEntry2)) - (97.684 * Math.log10(newEntry3)) - (104.912);
-                    AddData(newEntry, newEntry2, newEntry3, newEntry4, (int)kfa);
-                    bauchT.setText("");
-                    halsT.setText("");
-                    größeT.setText("");
-                    hüfteT.setText("");
-                    ergebnis.setText("Kfa: " + (int)kfa);
 
-                    if(kfa < 21) {
-                        bild.setImageResource(R.drawable.bild_zwanzigf);
-                    }if(kfa > 20 && kfa < 26) {
-                        bild.setImageResource(R.drawable.bild_fzwanzigf);
-                    }if(kfa > 25 && kfa < 31) {
-                        bild.setImageResource(R.drawable.bild_dreissigf);
-                    }if(kfa > 30 && kfa < 36) {
-                        bild.setImageResource(R.drawable.bild_fdreissigf);
-                    }if(kfa > 35 && kfa < 41) {
-                        bild.setImageResource(R.drawable.bild_vierzigf);
-                    }if(kfa > 40 && kfa < 46) {
-                        bild.setImageResource(R.drawable.bild_fvierzigf);
+                    if(kfa > 0) {
+                        AddData(newEntry, newEntry2, newEntry3, newEntry4, (int) kfa);
+                        bauchT.setText("");
+                        halsT.setText("");
+                        größeT.setText("");
+                        hüfteT.setText("");
+                        ergebnis.setText("Kfa: " + (int) kfa);
+
+                        if (kfa < 21) {
+                            bild.setImageResource(R.drawable.bild_zwanzigf);
+                        }
+                        if (kfa > 20 && kfa < 26) {
+                            bild.setImageResource(R.drawable.bild_fzwanzigf);
+                        }
+                        if (kfa > 25 && kfa < 31) {
+                            bild.setImageResource(R.drawable.bild_dreissigf);
+                        }
+                        if (kfa > 30 && kfa < 36) {
+                            bild.setImageResource(R.drawable.bild_fdreissigf);
+                        }
+                        if (kfa > 35 && kfa < 41) {
+                            bild.setImageResource(R.drawable.bild_vierzigf);
+                        }
+                        if (kfa > 40 && kfa < 46) {
+                            bild.setImageResource(R.drawable.bild_fvierzigf);
+                        }
+                    }
+                    else{
+                        toastMessage("Der Körperfettanteil kann nicht unter 0% liegen!");
                     }
                 } else {
                     toastMessage("Felder dürfen nicht leer sein!");
