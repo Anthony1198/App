@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="help_man_info">Es müssen eigene Angaben zu Größe, Hals- und Bauchumfang in cm gemacht werden. \n \nEs dürfen nur ganze Zahlen angegeben werden. Anschließend kann aus den eigegebenen Daten der Körperfettanteil in % berechnet werden. \n \nDer Körperfettanteil eines Mannes kann zwischen 8% und 35% liegen.</string>
+
+    <string name="help_woman_info">Es müssen eigene Angaben zu Größe, Hals-, Bauch- und Hüftumfang in cm gemacht werden. \n \nEs dürfen nur ganze Zahlen angegeben werden. Anschließend kann aus den eigegebenen Daten der Körperfettanteil in % berechnet werden. \n \nDer Körperfettanteil einer Frau kann zwischen 17% und 45% liegen.</string>
 </resources>
