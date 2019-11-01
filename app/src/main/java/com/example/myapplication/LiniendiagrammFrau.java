@@ -25,6 +25,7 @@ public class LiniendiagrammFrau extends AppCompatActivity {
     int[] yAxisData;
     String[] xAxisData;
     int i = 0;
+    int topWert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,10 @@ public class LiniendiagrammFrau extends AppCompatActivity {
         kfaInGraph();
 
 
+
         lineChartView = findViewById(R.id.chart);
 
+        topWert = mDatabaseHelperFrau.getMAXkfa();
         List yAxisValues = new ArrayList();
         List axisValues = new ArrayList();
 
@@ -72,7 +75,7 @@ public class LiniendiagrammFrau extends AppCompatActivity {
 
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        viewport.top = mDatabaseHelperFrau.getMAXkfa();
+        viewport.top = topWert;
         viewport.bottom = 0;
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
@@ -90,4 +93,5 @@ public class LiniendiagrammFrau extends AppCompatActivity {
             i++;
         }
     }
+
 }
