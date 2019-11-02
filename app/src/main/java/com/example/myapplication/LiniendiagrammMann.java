@@ -24,7 +24,7 @@ public class LiniendiagrammMann extends AppCompatActivity {
     ArrayList<Integer> listData;
     int[] yAxisData;
     String[] xAxisData;
-    int wert1;
+    int topWert;
     int i = 0;
 
     @Override
@@ -39,6 +39,7 @@ public class LiniendiagrammMann extends AppCompatActivity {
 
         lineChartView = findViewById(R.id.chart);
 
+        topWert = mDatabaseHelperMann.getMAXkfa();
         List yAxisValues = new ArrayList();
         List axisValues = new ArrayList();
 
@@ -73,7 +74,7 @@ public class LiniendiagrammMann extends AppCompatActivity {
 
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        viewport.top = 50;
+        viewport.top = topWert+5;
         viewport.bottom = 0;
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
@@ -91,4 +92,5 @@ public class LiniendiagrammMann extends AppCompatActivity {
             i++;
         }
     }
+
 }

@@ -75,7 +75,7 @@ public class LiniendiagrammFrau extends AppCompatActivity {
 
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
-        viewport.top = topWert;
+        viewport.top = topWert+5;
         viewport.bottom = 0;
         lineChartView.setMaximumViewport(viewport);
         lineChartView.setCurrentViewport(viewport);
@@ -93,5 +93,4 @@ public class LiniendiagrammFrau extends AppCompatActivity {
             i++;
         }
     }
-
 }

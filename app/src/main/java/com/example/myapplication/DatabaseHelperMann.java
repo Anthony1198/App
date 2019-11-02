@@ -75,6 +75,18 @@ public class DatabaseHelperMann extends SQLiteOpenHelper {
         return count;
     }
 
+    public int getMAXkfa() {
+        int max =0;
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT MAX(kfa) FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        if (data != null && data.moveToFirst()) {
+            max = data.getInt(0);
+            data.close();
+        }
+        return max;
+    }
+
 }
 
 
