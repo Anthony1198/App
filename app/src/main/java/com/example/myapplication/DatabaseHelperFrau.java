@@ -82,4 +82,9 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
         }
         return max;
     }
+
+    public void löscheDB() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ TABLE_NAME);
+    }
 }

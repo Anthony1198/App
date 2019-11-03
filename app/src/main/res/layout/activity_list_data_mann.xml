@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@drawable/gradient_background">>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">>
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/listView"/>
-</LinearLayout>
+        android:id="@+id/listView"
+        android:layout_width="411dp"
+        android:layout_height="521dp" />
+
+    <Button
+        android:id="@+id/löschen"
+        android:layout_width="348dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="532dp"
+        android:background="@drawable/button_round"
+        android:padding="10dp"
+        android:text="Verlauf löschen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -17,8 +20,6 @@ import java.util.ArrayList;
 
 public class ListDataActivityMann extends AppCompatActivity {
 
-    private static final String TAG = "ListDataActivity";
-
     DatabaseHelperMann mDatabaseHelperMann;
 
     private ListView mListView;
@@ -29,13 +30,20 @@ public class ListDataActivityMann extends AppCompatActivity {
         setContentView(R.layout.activity_list_data_mann);
         mListView = (ListView) findViewById(R.id.listView);
         mDatabaseHelperMann = new DatabaseHelperMann(this);
+        Button löschen = (Button) findViewById(R.id.löschen);
 
         populateListView();
+
+        löschen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabaseHelperMann.löscheDB();
+                populateListView();
+            }
+        });
     }
 
     private void populateListView() {
-        Log.d(TAG, "populateListView: Displaying data in the ListView.");
-
         //get the data and append to a list
         Cursor data = mDatabaseHelperMann.getData();
         ArrayList<String> listData = new ArrayList<>();
@@ -54,7 +62,7 @@ public class ListDataActivityMann extends AppCompatActivity {
     }
 
     /**
-     * customizable toast
+     *
      * @param message
      */
     private void toastMessage(String message){

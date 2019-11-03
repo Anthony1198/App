@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -27,8 +29,17 @@ public class ListDataActivityFrau extends AppCompatActivity {
             setContentView(R.layout.activity_list_data_mann);
             mListView = (ListView) findViewById(R.id.listView);
             mDatabaseHelperFrau = new DatabaseHelperFrau(this);
+            Button löschen = (Button) findViewById(R.id.löschen);
 
             populateListView();
+
+            löschen.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mDatabaseHelperFrau.löscheDB();
+                    populateListView();
+                }
+            });
         }
 
         private void populateListView() {
