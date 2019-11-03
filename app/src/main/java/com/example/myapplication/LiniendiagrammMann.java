@@ -62,7 +62,8 @@ public class LiniendiagrammMann extends AppCompatActivity {
 
         Axis axis = new Axis();
         axis.setValues(axisValues);
-        axis.setTextSize(16);
+        axis.setName("Messungen");
+        axis.setTextSize(22);
         axis.setTextColor(Color.parseColor("#03A9F4"));
         data.setAxisXBottom(axis);
 
@@ -88,7 +89,7 @@ public class LiniendiagrammMann extends AppCompatActivity {
 
         while (data.moveToNext()){
             yAxisData[i] = data.getInt(4);
-            xAxisData[i] = (""+(i+1));
+            xAxisData[i] = ((i+1)+".");
             i++;
         }
     }

@@ -127,10 +127,26 @@ public class MannActivity extends AppCompatActivity {
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4) {
         boolean insertData = mDatabaseHelperMann.addData(newEntry, newEntry2, newEntry3, newEntry4);
 
-        if (insertData) {
-            toastMessage("Daten wurden erfolgreich gespeichert!");
-        } else {
-            toastMessage("Etwas ist schief gelaufen :(");
+        if (kfa < 36) {
+            if (insertData) {
+                toastMessage("Daten wurden erfolgreich gespeichert!");
+            } else {
+                toastMessage("Etwas ist schief gelaufen :(");
+            }
+        }
+        if (kfa < 36) {
+            if (insertData) {
+                toastMessage("Daten wurden erfolgreich gespeichert!");
+            } else {
+                toastMessage("Etwas ist schief gelaufen :(");
+            }
+        }
+        if (kfa > 35) {
+            if (insertData) {
+            //nichts, da Meldung wegen Arzt!
+            } else {
+                toastMessage("Etwas ist schief gelaufen :(");
+            }
         }
     }
 

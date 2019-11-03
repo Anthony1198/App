@@ -83,11 +83,12 @@ public class FrauActivity extends AppCompatActivity {
                         hüfteT.setText("");
                     }
                     if(kfa > 45){
-                        toastMessage("Ihr Köperfettanteil ist über 35%. Bitte suchen Sie einen Arzt auf!");
+                        toastMessage("Ihr Köperfettanteil ist über 45%. Bitte suchen Sie einen Arzt auf!");
                         AddData(newEntry, newEntry2, newEntry3, newEntry4, (int) kfa);
                         bauchT.setText("");
                         halsT.setText("");
                         größeT.setText("");
+                        hüfteT.setText("");
                         ergebnis.setText("        KFA: " + (int) kfa + "%");
                         bild.setImageResource(R.drawable.bild_arzt);
                     }
@@ -113,7 +114,7 @@ public class FrauActivity extends AppCompatActivity {
                     Intent intent = new Intent(FrauActivity.this, LiniendiagrammFrau.class);
                     startActivity(intent);
                 }else{
-                    toastMessage("Graph erst ab zwei Datensätzen nutzbar!");
+                    toastMessage("Graph erst ab zwei Messungen nutzbar!");
                 }
             }
         });
@@ -129,10 +130,19 @@ public class FrauActivity extends AppCompatActivity {
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4, int newEntry5) {
         boolean insertData = mDatabaseHelperFrau.addData(newEntry, newEntry2, newEntry3, newEntry4, newEntry5);
 
-        if (insertData) {
-            toastMessage("Daten wurden erfolgreich gespeichert!");
-        } else {
-            toastMessage("Etwas ist schief gelaufen :(");
+        if (kfa < 46) {
+            if (insertData) {
+                toastMessage("Daten wurden erfolgreich gespeichert!");
+            } else {
+                toastMessage("Etwas ist schief gelaufen :(");
+            }
+        }
+        if (kfa > 45) {
+            if (insertData) {
+                //nichts, da Meldung wegen Arzt!
+            } else {
+                toastMessage("Etwas ist schief gelaufen :(");
+            }
         }
     }
 
