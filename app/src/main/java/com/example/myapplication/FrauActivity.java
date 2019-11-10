@@ -11,7 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Klasse für die Verarbeitung der Frauen Activity
+ */
+
 public class FrauActivity extends AppCompatActivity {
+
+    /**
+     * Variablen/Objekt Deklaration
+     */
 
     DatabaseHelperFrau mDatabaseHelperFrau;
     private Button btnAdd, liste, graph, hilfe;
@@ -37,6 +45,10 @@ public class FrauActivity extends AppCompatActivity {
 
         mDatabaseHelperFrau = new DatabaseHelperFrau(this);
 
+        /**
+         * Bei Klick auf Berechnen-Button werden die eingetragenen Werte geholt, der kfa berechnet und in die Datenabnk geschrieben.
+         * Desweiteren wird das dazu passende Bild gewählt und eine Tpastmassage geworfen
+         */
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,6 +110,9 @@ public class FrauActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Listen-Button wird durch ein Intent die ListData Klasse aufgerufen
+         */
         liste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +121,9 @@ public class FrauActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Graph-Button wird durch ein Intent die Liniendiagramm Klasse aufgerufen
+         */
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +137,9 @@ public class FrauActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Hilfe-Button (Fragezeichen) wird durch ein Intent die Hilfe Klasse aufgerufen
+         */
         hilfe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,6 +148,10 @@ public class FrauActivity extends AppCompatActivity {
         });
     }
 
+
+    /**
+     * Daten werden für Speicherung an die Datenbank weitergeleitet
+     */
     public void AddData(int newEntry, int newEntry2, int newEntry3, int newEntry4, int newEntry5) {
         boolean insertData = mDatabaseHelperFrau.addData(newEntry, newEntry2, newEntry3, newEntry4, newEntry5);
 
@@ -153,7 +178,6 @@ public class FrauActivity extends AppCompatActivity {
 
     /**
      * Nachrichten-Ausgabe
-     * @param message
      */
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();

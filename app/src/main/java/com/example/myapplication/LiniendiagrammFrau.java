@@ -19,6 +19,10 @@ import lecho.lib.hellocharts.view.LineChartView;
 
 public class LiniendiagrammFrau extends AppCompatActivity {
 
+    /**
+     * Variablen/Objekt Deklaration
+     */
+
     LineChartView lineChartView;
     DatabaseHelperFrau mDatabaseHelperFrau;
     ArrayList<Integer> listData;
@@ -61,6 +65,9 @@ public class LiniendiagrammFrau extends AppCompatActivity {
         LineChartData data = new LineChartData();
         data.setLines(lines);
 
+        /**
+         * x-Achsen Deklaration
+         */
         Axis axis = new Axis();
         axis.setValues(axisValues);
         axis.setName("Messungen");
@@ -68,12 +75,18 @@ public class LiniendiagrammFrau extends AppCompatActivity {
         axis.setTextColor(Color.parseColor("#03A9F4"));
         data.setAxisXBottom(axis);
 
+        /**
+         * y-Achsen Deklaration
+         */
         Axis yAxis = new Axis();
         yAxis.setName("Kröperfettanteil in %");
         yAxis.setTextColor(Color.parseColor("#03A9F4"));
         yAxis.setTextSize(22);
         data.setAxisYLeft(yAxis);
 
+        /**
+         * Linienerzeugung
+         */
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
         viewport.top = topWert+5;
@@ -82,6 +95,10 @@ public class LiniendiagrammFrau extends AppCompatActivity {
         lineChartView.setCurrentViewport(viewport);
     }
 
+    /**
+     * kfa-Werte werden aus der Datenbank geholt und in ein String geschrieben für die y-Achse.
+     * Desweiteren werden auch der Text für die x-Achse generiert
+     */
     private void kfaInGraph() {
         Cursor data = mDatabaseHelperFrau.getData();
         int rows = mDatabaseHelperFrau.getRowsCount();

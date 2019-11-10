@@ -15,12 +15,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Klasse für die Auflistung der Frauen-Daten
+ */
+
 public class ListDataActivityFrau extends AppCompatActivity {
 
-        private static final String TAG = "ListDataActivity";
+    /**
+     * Variablen/Objekt Deklaration
+     */
 
         DatabaseHelperFrau mDatabaseHelperFrau;
-
         private ListView mListView;
 
         @Override
@@ -42,31 +47,27 @@ public class ListDataActivityFrau extends AppCompatActivity {
             });
         }
 
+    /**
+     * Daten werden aus der Datenbank geholt und in die Liste hinzugeüfgt.
+     */
         private void populateListView() {
-            Log.d(TAG, "populateListView: Displaying data in the ListView.");
-
-            //get the data and append to a list
             Cursor data = mDatabaseHelperFrau.getData();
             ArrayList<String> listData = new ArrayList<>();
             while(data.moveToNext()){
-                //get the value from the database in column 1
-                //then add it to the ArrayList
                 listData.add("Bauch: " + data.getString(1) + "\n" +
                         "Hals: " + data.getString(2) + "\n" +
                         "Größe: " + data.getString(3) + "\n" +
                         "Hüfte: " + data.getString(4) + "\n" +
                         "Kfa: " + data.getString(5) + "%");
             }
-            //create the list adapter and set the adapter
             ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
             mListView.setAdapter(adapter);
 
         }
 
-        /**
-         * customizable toast
-         * @param message
-         */
+    /**
+     * Nachrichten-Ausgabe
+     */
         private void toastMessage(String message){
             Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
         }

@@ -20,8 +20,11 @@ import java.util.ArrayList;
 
 public class ListDataActivityMann extends AppCompatActivity {
 
-    DatabaseHelperMann mDatabaseHelperMann;
+    /**
+     * Variablen/Objekt Deklaration
+     */
 
+    DatabaseHelperMann mDatabaseHelperMann;
     private ListView mListView;
 
     @Override
@@ -43,27 +46,25 @@ public class ListDataActivityMann extends AppCompatActivity {
         });
     }
 
+    /**
+     * Daten werden aus der Datenbank geholt und in die Liste hinzugeüfgt.
+     */
     private void populateListView() {
-        //get the data and append to a list
         Cursor data = mDatabaseHelperMann.getData();
         ArrayList<String> listData = new ArrayList<>();
         while(data.moveToNext()){
-            //get the value from the database in column 1
-            //then add it to the ArrayList
             listData.add("Bauch: " + data.getString(1) + "\n" +
                         "Hals: " + data.getString(2) + "\n" +
                         "Größe: " + data.getString(3) + "\n" +
-                    "Kfa: " + data.getString(4) + "%");
+                        "Kfa: " + data.getString(4) + "%");
         }
-        //create the list adapter and set the adapter
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listData);
         mListView.setAdapter(adapter);
 
     }
 
     /**
-     *
-     * @param message
+     * Nachrichten-Ausgabe
      */
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();

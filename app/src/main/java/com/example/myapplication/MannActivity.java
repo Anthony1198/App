@@ -12,7 +12,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Klasse für die Verarbeitung der Männer Activity
+ */
+
 public class MannActivity extends AppCompatActivity {
+
+    /**
+     * Variablen/Objekt Deklaration
+     */
 
     DatabaseHelperMann mDatabaseHelperMann;
     private Button btnAdd, liste, graph, hilfe;
@@ -37,10 +45,13 @@ public class MannActivity extends AppCompatActivity {
 
         mDatabaseHelperMann = new DatabaseHelperMann(this);
 
+        /**
+         * Bei Klick auf Berechnen-Button werden die eingetragenen Werte geholt, der kfa berechnet und in die Datenabnk geschrieben.
+         * Desweiteren wird das dazu passende Bild gewählt und eine Tpastmassage geworfen
+         */
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if (bauchT.getText().length() != 0 && halsT.getText().length() != 0 &&  größeT.getText().length() != 0)  {
                     int newEntry = Integer.parseInt(bauchT.getText().toString());
                     int newEntry2 = Integer.parseInt(halsT.getText().toString());
@@ -95,6 +106,9 @@ public class MannActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Listen-Button wird durch ein Intent die ListData Klasse aufgerufen
+         */
         liste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,6 +117,9 @@ public class MannActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Graph-Button wird durch ein Intent die Liniendiagramm Klasse aufgerufen
+         */
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,6 +133,9 @@ public class MannActivity extends AppCompatActivity {
         }
     });
 
+        /**
+         * Bei Klick auf Hilfe-Button (Fragezeichen) wird durch ein Intent die Hilfe Klasse aufgerufen
+         */
         hilfe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -157,7 +177,6 @@ public class MannActivity extends AppCompatActivity {
 
     /**
      * Nachrichten-Ausgabe
-     * @param message
      */
     private void toastMessage(String message){
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();

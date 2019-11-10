@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * Klasse für die Hilfe-Seite
+ */
+
 public class HilfeActivity extends AppCompatActivity {
 
     @Override

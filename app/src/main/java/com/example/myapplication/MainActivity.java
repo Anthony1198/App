@@ -8,6 +8,10 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Klasse für die Auswahl des Geschlechtes auf der Startseite
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        /**
+         * Bei Klick auf Mann-Bildbutton wird durch ein Intent die Mann Klasse aufgerufen
+         */
         ImageButton bMann = (ImageButton) findViewById(R.id.imageButtonMANN);
         bMann.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Frauen-Bildbutton wird durch ein Intent die Frauen Klasse aufgerufen
+         */
         ImageButton bFrau = (ImageButton) findViewById(R.id.imageButtonFRAU);
         bFrau.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Bei Klick auf Hilfe-Button (Fragezeichen) wird durch ein Intent die Hilfe Klasse aufgerufen
+         */
         Button bHilfe = (Button) findViewById(R.id.helpButton);
         bHilfe.setOnClickListener(new View.OnClickListener() {
             @Override

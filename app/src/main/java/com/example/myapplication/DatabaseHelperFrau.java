@@ -6,7 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * Datenbankklasse für die Daten der Frau
+ */
+
 public class DatabaseHelperFrau extends SQLiteOpenHelper {
+
+    /**
+     * Variablen Deklaration
+     */
 
     private static final String TABLE_NAME = "WerteFrau";
     private static final String COL1 = "ID";
@@ -32,6 +40,11 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    /**
+     * Fügt die mitgegeben Daten in die Datenbank hinzu
+     * @return Boolean ob Daten erfolgreich gespeichert wurden
+     */
+
     public boolean addData(int item, int item2, int item3, int item4, int item5) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -53,7 +66,7 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
 
     /**
      * Gibt alle Daten zurück von der Datenbank
-     * @return
+     * @return Cursor-Objekt mit Datenbank-Daten
      */
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -62,6 +75,10 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
         return data;
     }
 
+    /**
+     * Zählt Anzahl der Tabellen-Zeilen
+     * @return Anzahl Zeilen
+     */
     public int getRowsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -71,6 +88,10 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
         return count;
     }
 
+    /**
+     * Sucht maximalen Wert in der kfa Spalte
+     * @return maximaler kfa-Wert
+     */
     public int getMAXkfa() {
         int max =0;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -83,6 +104,9 @@ public class DatabaseHelperFrau extends SQLiteOpenHelper {
         return max;
     }
 
+    /**
+     * Datenbank wird gelöscht
+     */
     public void löscheDB() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from "+ TABLE_NAME);

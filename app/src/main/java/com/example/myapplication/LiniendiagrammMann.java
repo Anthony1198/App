@@ -16,8 +16,15 @@ import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.view.LineChartView;
 
+/**
+ * Klasse für die Auflistung der Frauen-Daten
+ */
+
 public class LiniendiagrammMann extends AppCompatActivity {
 
+    /**
+     * Variablen/Objekt Deklaration
+     */
 
     LineChartView lineChartView;
     DatabaseHelperMann mDatabaseHelperMann;
@@ -32,13 +39,9 @@ public class LiniendiagrammMann extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liniendiagramm_mann);
 
-
         mDatabaseHelperMann = new DatabaseHelperMann(this);
         kfaInGraph();
-
-
         lineChartView = findViewById(R.id.chart);
-
         topWert = mDatabaseHelperMann.getMAXkfa();
         List yAxisValues = new ArrayList();
         List axisValues = new ArrayList();
@@ -60,6 +63,9 @@ public class LiniendiagrammMann extends AppCompatActivity {
         LineChartData data = new LineChartData();
         data.setLines(lines);
 
+        /**
+         * x-Achsen Deklaration
+         */
         Axis axis = new Axis();
         axis.setValues(axisValues);
         axis.setName("Messungen");
@@ -67,12 +73,18 @@ public class LiniendiagrammMann extends AppCompatActivity {
         axis.setTextColor(Color.parseColor("#03A9F4"));
         data.setAxisXBottom(axis);
 
+        /**
+         * y-Achsen Deklaration
+         */
         Axis yAxis = new Axis();
         yAxis.setName("Kröperfettanteil in %");
         yAxis.setTextColor(Color.parseColor("#03A9F4"));
         yAxis.setTextSize(22);
         data.setAxisYLeft(yAxis);
 
+        /**
+         * Linienerzeugung
+         */
         lineChartView.setLineChartData(data);
         Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
         viewport.top = topWert+5;
@@ -81,6 +93,10 @@ public class LiniendiagrammMann extends AppCompatActivity {
         lineChartView.setCurrentViewport(viewport);
     }
 
+    /**
+     * kfa-Werte werden aus der Datenbank geholt und in ein String geschrieben für die y-Achse.
+     * Desweiteren werden auch der Text für die x-Achse generiert
+     */
     private void kfaInGraph() {
         Cursor data = mDatabaseHelperMann.getData();
         int rows = mDatabaseHelperMann.getRowsCount();
